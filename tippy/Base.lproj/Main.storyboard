@@ -85,7 +85,13 @@
                             <outletCollection property="gestureRecognizers" destination="6vo-bw-C8o" appends="YES" id="XFm-Ou-mek"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tippy" id="iJS-Ba-3Nl"/>
+                    <navigationItem key="navigationItem" title="Tippy" id="iJS-Ba-3Nl">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="hn1-a1-isb">
+                            <connections>
+                                <segue destination="sG4-EP-WHu" kind="push" id="WXs-dh-11l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="zN0-bT-84b" id="z5O-Fv-BGM"/>
                         <outlet property="tipControl" destination="iN6-Rq-3ZU" id="moP-Vt-Y6c"/>
@@ -101,6 +107,45 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="537.5" y="154.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="zL4-sj-H8o">
+            <objects>
+                <viewController id="sG4-EP-WHu" customClass="SettingsViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kB3-Os-Zmi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="YjI-Ej-hFg">
+                                <rect key="frame" x="16" y="169" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="saveDefaultTip:" destination="sG4-EP-WHu" eventType="valueChanged" id="d6e-j9-dew"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bY2-hS-8nz">
+                                <rect key="frame" x="143" y="128" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="7H3-q7-gfL"/>
+                    <connections>
+                        <outlet property="tipSelector" destination="YjI-Ej-hFg" id="RpA-Oa-KWy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96Y-wO-gn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038.5" y="154.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ejb-fg-a6D">

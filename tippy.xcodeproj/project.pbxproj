@@ -14,6 +14,8 @@
 		C49FA2E21F27EFA00014B400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49FA2E01F27EFA00014B400 /* LaunchScreen.storyboard */; };
 		C49FA2ED1F27EFA00014B400 /* tippyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FA2EC1F27EFA00014B400 /* tippyTests.swift */; };
 		C49FA2F81F27EFA00014B400 /* tippyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FA2F71F27EFA00014B400 /* tippyUITests.swift */; };
+		C49FA3061F27FC930014B400 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FA3051F27FC930014B400 /* SettingsViewController.swift */; };
+		C49FA3081F280F9B0014B400 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FA3071F280F9B0014B400 /* Tips.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		C49FA2F31F27EFA00014B400 /* tippyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tippyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49FA2F71F27EFA00014B400 /* tippyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tippyUITests.swift; sourceTree = "<group>"; };
 		C49FA2F91F27EFA00014B400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C49FA3051F27FC930014B400 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C49FA3071F280F9B0014B400 /* Tips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		C49FA2CB1F27EFA00014B400 = {
 			isa = PBXGroup;
 			children = (
+				C49FA3071F280F9B0014B400 /* Tips.swift */,
 				C49FA2D61F27EFA00014B400 /* tippy */,
 				C49FA2EB1F27EFA00014B400 /* tippyTests */,
 				C49FA2F61F27EFA00014B400 /* tippyUITests */,
@@ -100,6 +105,7 @@
 				C49FA2D71F27EFA00014B400 /* AppDelegate.swift */,
 				C49FA2D91F27EFA00014B400 /* ViewController.swift */,
 				C49FA2DB1F27EFA00014B400 /* Main.storyboard */,
+				C49FA3051F27FC930014B400 /* SettingsViewController.swift */,
 				C49FA2DE1F27EFA00014B400 /* Assets.xcassets */,
 				C49FA2E01F27EFA00014B400 /* LaunchScreen.storyboard */,
 				C49FA2E31F27EFA00014B400 /* Info.plist */,
@@ -260,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C49FA2DA1F27EFA00014B400 /* ViewController.swift in Sources */,
+				C49FA3081F280F9B0014B400 /* Tips.swift in Sources */,
 				C49FA2D81F27EFA00014B400 /* AppDelegate.swift in Sources */,
+				C49FA3061F27FC930014B400 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
