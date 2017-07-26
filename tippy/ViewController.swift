@@ -27,8 +27,9 @@ class ViewController: UIViewController {
         tipControl.layer.cornerRadius = 0
         tipControl.layer.borderWidth = 1
         tipControl.layer.masksToBounds = true
+        navigationController?.setNavigationBarHidden(true, animated: true)
         tipControl.selectedSegmentIndex = Tips.getDefaultTipIndex()
-        self.calculateTip(tipControl)
+        calculateTip(tipControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
         
         let tipPercentages = Tips.availableTips()
         
-        let bill = 100.0
+        let bill = Double(String(billLabel.text!.dropFirst())) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
@@ -52,9 +53,10 @@ class ViewController: UIViewController {
         let button = sender as! DarkButton
         var billText = billLabel.text!
         let buttonText = button.titleLabel!.text!
+        let dotIdx = billText.range(of: ".")
         switch buttonText {
             case ".":
-                if billText.range(of: ".") == nil {
+                if dotIdx == nil {
                     if billText == "$" {
                         billText = "$0."
                     } else {
@@ -68,8 +70,15 @@ class ViewController: UIViewController {
                 }
                 break
             default:
-                billText.append(buttonText)
+                var decimals = 0
+                if let dotIdx = dotIdx {
+                    decimals = billText.distance(from: dotIdx.lowerBound, to: billText.endIndex)
+                }
+                if decimals <= 2 {
+                    billText.append(buttonText)
+            }
         }
         billLabel.text = billText
+        calculateTip(self)
     }
 }

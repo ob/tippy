@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         tipSelector.selectedSegmentIndex = Tips.getDefaultTipIndex()
     }
 
