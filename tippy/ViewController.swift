@@ -22,13 +22,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func tipSelectorChanged(_ sender: Any) {
+        TipsManager.shared.selectedIndex = tipControl.selectedSegmentIndex
+        calculateTip(self)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         tipControl.layer.borderColor = tipControl.tintColor!.cgColor
         tipControl.layer.cornerRadius = 0
         tipControl.layer.borderWidth = 1
         tipControl.layer.masksToBounds = true
         navigationController?.setNavigationBarHidden(true, animated: true)
-        tipControl.selectedSegmentIndex = Tips.getDefaultTipIndex()
+        tipControl.selectedSegmentIndex = TipsManager.shared.selectedIndex
         calculateTip(tipControl)
     }
 
@@ -38,11 +43,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateTip(_ sender: Any) {
-        
-        let tipPercentages = Tips.availableTips()
+        let tipPercentage = TipsManager.shared.getTip()
         
         let bill = Double(String(billLabel.text!.dropFirst())) ?? 0
-        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
+        let tip = bill * tipPercentage
         let total = bill + tip
         
         tipLabel.text = String(format: "$ %.2f", tip)

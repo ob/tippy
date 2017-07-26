@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        tipSelector.selectedSegmentIndex = Tips.getDefaultTipIndex()
+        tipSelector.selectedSegmentIndex = TipsManager.shared.getDefaultTipIndex()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func saveDefaultTip(_ sender: Any) {
-        Tips.saveDefaultTipIndex(tipSelector.selectedSegmentIndex)
+        TipsManager.shared.saveDefaultTipIndex(tipSelector.selectedSegmentIndex)
     }
 
 }

@@ -4,7 +4,7 @@
 
 Submitted by: **OB**
 
-Time spent: **2** hours spent in total
+Time spent: **4.5** hours spent in total
 
 ## User Stories
 

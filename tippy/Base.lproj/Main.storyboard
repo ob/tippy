@@ -171,7 +171,7 @@
                                         </segments>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fh4-1C-apG"/>
+                                            <action selector="tipSelectorChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="WCU-aD-xfQ"/>
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hr8-2Z-yZe" customClass="DarkButton" customModule="tippy" customModuleProvider="target">

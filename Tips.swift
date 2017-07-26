@@ -8,27 +8,38 @@
 
 import UIKit
 
-let TIP_SELECTOR_KEY = "defaultTipSelectorIndex"
-let AVAILABLE_TIPS = [0.18, 0.2, 0.25]
+final class TipsManager {
 
-class Tips: NSObject {
+    let TIP_SELECTOR_KEY = "defaultTipSelectorIndex"
+    var available_tips = [0.18, 0.2, 0.25]
+    var selectedIndex = 0
+
+    private init() {
+        selectedIndex = getDefaultTipIndex()
+    }
     
-    public class func availableTips() -> [Double] {
-        return AVAILABLE_TIPS
+    static let shared = TipsManager()
+    
+    public func availableTips() -> [Double] {
+        return available_tips
     }
 
-    public class func getDefaultTipIndex() -> Int {
+    public func getDefaultTipIndex() -> Int {
         let defaults = UserDefaults.standard
         return defaults.integer(forKey: TIP_SELECTOR_KEY)
     }
+    
+    public func getTip() -> Double {
+        return available_tips[selectedIndex]
+    }
 
-    public class func saveDefaultTipIndex(_ index: Int) {
+    public func saveDefaultTipIndex(_ index: Int) {
         if index < 0 || index > 2 {
             return
         }
         let defaults = UserDefaults.standard
         defaults.set(index, forKey: TIP_SELECTOR_KEY)
         defaults.synchronize()
+        selectedIndex = index
     }
-
 }
