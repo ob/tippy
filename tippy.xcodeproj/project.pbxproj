@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E9731AA1F2850BC00392FB0 /* DarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9731A91F2850BC00392FB0 /* DarkButton.swift */; };
 		C49FA2D81F27EFA00014B400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FA2D71F27EFA00014B400 /* AppDelegate.swift */; };
 		C49FA2DA1F27EFA00014B400 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FA2D91F27EFA00014B400 /* ViewController.swift */; };
 		C49FA2DD1F27EFA00014B400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49FA2DB1F27EFA00014B400 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E9731A91F2850BC00392FB0 /* DarkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkButton.swift; sourceTree = "<group>"; };
 		C49FA2D41F27EFA00014B400 /* tippy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tippy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49FA2D71F27EFA00014B400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C49FA2D91F27EFA00014B400 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				C49FA2D71F27EFA00014B400 /* AppDelegate.swift */,
 				C49FA2D91F27EFA00014B400 /* ViewController.swift */,
 				C49FA2DB1F27EFA00014B400 /* Main.storyboard */,
+				2E9731A91F2850BC00392FB0 /* DarkButton.swift */,
 				C49FA3051F27FC930014B400 /* SettingsViewController.swift */,
 				C49FA2DE1F27EFA00014B400 /* Assets.xcassets */,
 				C49FA2E01F27EFA00014B400 /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C49FA2DA1F27EFA00014B400 /* ViewController.swift in Sources */,
+				2E9731AA1F2850BC00392FB0 /* DarkButton.swift in Sources */,
 				C49FA3081F280F9B0014B400 /* Tips.swift in Sources */,
 				C49FA2D81F27EFA00014B400 /* AppDelegate.swift in Sources */,
 				C49FA3061F27FC930014B400 /* SettingsViewController.swift in Sources */,
@@ -515,6 +519,7 @@
 				C49FA2FE1F27EFA00014B400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C49FA2FF1F27EFA00014B400 /* Build configuration list for PBXNativeTarget "tippyTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +528,7 @@
 				C49FA3011F27EFA00014B400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C49FA3021F27EFA00014B400 /* Build configuration list for PBXNativeTarget "tippyUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +537,7 @@
 				C49FA3041F27EFA00014B400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
