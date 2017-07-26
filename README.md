@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![screenshot](/Images/Tippy.gif?raw=true "Screenshot of Tippy")
+![screenshot](/Images/Tippy-dark.gif?raw=true "Screenshot of Tippy")
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
