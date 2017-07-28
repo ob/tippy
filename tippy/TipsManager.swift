@@ -1,5 +1,5 @@
 //
-//  Tips.swift
+//  TipsManager.swift
 //  tippy
 //
 //  Created by Oscar Bonilla on 7/25/17.
