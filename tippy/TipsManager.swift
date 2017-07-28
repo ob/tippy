@@ -11,11 +11,16 @@ import UIKit
 final class TipsManager {
 
     let TIP_SELECTOR_KEY = "defaultTipSelectorIndex"
-    var available_tips = [0.18, 0.2, 0.25]
+    let TIP_AVAILABLE_TIPS_KEY = "tipsAvailableArray"
+    var available_tips = [0.15, 0.18, 0.2]
     var selectedIndex = 0
 
     private init() {
+        let defaults = UserDefaults.standard
         selectedIndex = getDefaultTipIndex()
+        if let defaultTips = defaults.array(forKey: TIP_AVAILABLE_TIPS_KEY) {
+            available_tips = defaultTips as! [Double]
+        }
     }
     
     static let shared = TipsManager()
@@ -41,5 +46,11 @@ final class TipsManager {
         defaults.set(index, forKey: TIP_SELECTOR_KEY)
         defaults.synchronize()
         selectedIndex = index
+    }
+    
+    public func saveAvailableTips() {
+        let defaults = UserDefaults.standard
+        defaults.set(available_tips, forKey: TIP_AVAILABLE_TIPS_KEY)
+        defaults.synchronize()
     }
 }

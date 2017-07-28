@@ -14,6 +14,9 @@
             <string>AmericanTypewriter-Bold</string>
             <string>AmericanTypewriter-Semibold</string>
         </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Tippy-->
@@ -214,9 +217,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="ZAm-Gz-kcv">
-                                        <rect key="frame" x="8" y="277" width="30" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZAm-Gz-kcv">
+                                        <rect key="frame" x="338" y="14" width="37" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <state key="normal" title="System">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="sG4-EP-WHu" kind="push" id="mDc-DQ-j69"/>
                                         </connections>
@@ -236,6 +243,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="billLabel" destination="B1z-xF-Rq3" id="dqE-j6-KEu"/>
+                        <outlet property="gearButton" destination="ZAm-Gz-kcv" id="KHG-8Z-soq"/>
                         <outlet property="tipControl" destination="iN6-Rq-3ZU" id="moP-Vt-Y6c"/>
                         <outlet property="tipLabel" destination="gSO-oI-UQB" id="QoK-ca-4JH"/>
                         <outlet property="totalLabel" destination="Etf-n7-4tJ" id="FyK-wX-RtZ"/>
@@ -258,18 +266,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="YjI-Ej-hFg">
-                                <rect key="frame" x="16" y="169" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="18%"/>
-                                    <segment title="20%"/>
-                                    <segment title="25%"/>
-                                </segments>
-                                <connections>
-                                    <action selector="saveDefaultTip:" destination="sG4-EP-WHu" eventType="valueChanged" id="d6e-j9-dew"/>
-                                </connections>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bY2-hS-8nz">
                                 <rect key="frame" x="143" y="128" width="89" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -277,15 +273,74 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="JTq-lJ-xk5">
+                                <rect key="frame" x="0.0" y="172" width="375" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="saveDefaultTip:" destination="sG4-EP-WHu" eventType="valueChanged" id="q91-Pa-hKA"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="18%" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="npE-sx-cPe">
+                                <rect key="frame" x="6" y="264" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="didBeginEditingTextField:" destination="sG4-EP-WHu" eventType="editingDidBegin" id="znE-BS-b0E"/>
+                                    <action selector="tipChanged:" destination="sG4-EP-WHu" eventType="editingDidEnd" id="VyU-hd-q96"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20%" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Wxp-mk-kqO">
+                                <rect key="frame" x="131" y="264" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="didBeginEditingTextField:" destination="sG4-EP-WHu" eventType="editingDidBegin" id="LjG-tO-A2P"/>
+                                    <action selector="tipChanged:" destination="sG4-EP-WHu" eventType="editingDidEnd" id="FHA-5m-Gc1"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25%" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="QkT-fn-OoC">
+                                <rect key="frame" x="257" y="264" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="didBeginEditingTextField:" destination="sG4-EP-WHu" eventType="editingDidBegin" id="Fzm-ND-on4"/>
+                                    <action selector="tipChanged:" destination="sG4-EP-WHu" eventType="editingDidEnd" id="SMw-lq-lw6"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rGt-rF-0vF" appends="YES" id="Sx9-sD-YOY"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="7H3-q7-gfL"/>
                     <connections>
-                        <outlet property="tipSelector" destination="YjI-Ej-hFg" id="RpA-Oa-KWy"/>
+                        <outlet property="tip0" destination="npE-sx-cPe" id="JZt-AF-qRW"/>
+                        <outlet property="tip1" destination="Wxp-mk-kqO" id="aqV-bu-i03"/>
+                        <outlet property="tip2" destination="QkT-fn-OoC" id="uWD-Ro-bC5"/>
+                        <outlet property="tipControl" destination="JTq-lJ-xk5" id="Kry-q4-cba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96Y-wO-gn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rGt-rF-0vF">
+                    <connections>
+                        <action selector="onTap:" destination="sG4-EP-WHu" id="y1p-QG-lpA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1038.5" y="154.5"/>
         </scene>

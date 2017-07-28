@@ -4,7 +4,7 @@
 
 Submitted by: **OB**
 
-Time spent: **5** hours spent in total
+Time spent: **6.5** hours spent in total
 
 ## User Stories
 
@@ -21,19 +21,20 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Custom look
+- [x] Change tip amounts in settings
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-![screenshot](/Images/Tippy-dark.gif?raw=true "Screenshot of Tippy")
+![screenshot](/Images/Tippy-v3.gif?raw=true "Screenshot of Tippy")
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Xcode kept crashing on me.
 
 ## License
 

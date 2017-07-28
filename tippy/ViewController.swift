@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var billLabel: UILabel!
+    @IBOutlet weak var gearButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,27 @@ class ViewController: UIViewController {
         tipControl.layer.borderWidth = 1
         tipControl.layer.masksToBounds = true
         navigationController?.setNavigationBarHidden(true, animated: true)
+        for i in 0..<tipControl.numberOfSegments {
+            let txt = String(format: "%.0f%%", TipsManager.shared.available_tips[i] * 100.0)
+            tipControl.setTitle(txt, forSegmentAt: i)
+        }
         tipControl.selectedSegmentIndex = TipsManager.shared.selectedIndex
         calculateTip(tipControl)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Gross but I don't know why it doesn't reload the view.
+        // The problem happens if you change the tip amount in one of
+        // the textFields in settings and then hit the Back button without
+        // dismising the keyboard. In that case, I don't know why the viewWillAppear
+        // method doesn't get called.
+        //
+        // I guess that's why I need to take the iOS class
+        for i in 0..<tipControl.numberOfSegments {
+            let txt = String(format: "%.0f%%", TipsManager.shared.available_tips[i] * 100.0)
+            tipControl.setTitle(txt, forSegmentAt: i)
+        }
+        gearButton.titleLabel?.text = " \u{2699}\u{0000FE0E} "
     }
 
     override func didReceiveMemoryWarning() {
