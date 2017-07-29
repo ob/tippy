@@ -42,7 +42,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func onTap(_ sender: Any) {
-        print("OnTap")
         let textFields = [tip0, tip1, tip2]
         for i in 0..<textFields.count {
             textFields[i]?.endEditing(true)
@@ -61,7 +60,7 @@ class SettingsViewController: UIViewController {
         }
         assert(index >= 0 && index < textFields.count)
         // drop the %
-        var percentage: String = changedTextField.text!
+        var percentage: String = changedTextField.text ?? "%"
         if percentage.characters.last! == "%" {
             percentage = String(percentage.characters.dropLast())
         }

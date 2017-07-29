@@ -65,7 +65,10 @@ class ViewController: UIViewController {
     @IBAction func calculateTip(_ sender: Any) {
         let tipPercentage = TipsManager.shared.getTip()
         
-        let bill = Double(String(billLabel.text!.dropFirst())) ?? 0
+        var text = billLabel.text!
+        text = String(text.characters.dropFirst())
+
+        let bill = Double(text) ?? 0
         let tip = bill * tipPercentage
         let total = bill + tip
         
