@@ -32,9 +32,24 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-## Notes
+## Project Analysis
 
-Xcode kept crashing on me.
+As part of your pre-work submission, please reflect on the app and answer the following questions below:
+
+**Question 1**: "What are your reactions to the iOS app development platform so far? How would you describe outlets and actions to another developer? Bonus: any idea how they are being implemented under the hood? (It might give you some ideas if you right-click on the Storyboard and click Open As->Source Code")
+
+**Answer:** 
+
+I'm pretty neutral to the iOS development platform. It seems to have good tools but I haven't used it  enough to have a strong opinion.
+Xcode kept crashing on me, both 8.3.3 and the 9 beta, this kept disrupting my flow. It doesn't seem Xcode should crash on such a simple project.
+
+I would describe outlets and actions as references to views for the former and as callbacks for the latter. I poked at the 'Open As Source" thingy and it showed me a bunch of XML. It seems they serialize the objects and then instantiate them at runtime to create the interface. 
+
+Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC), which is not a garbage collector, to manage memory. Can you explain how you can get a strong reference cycle for closures? (There's a section explaining this concept in the link, how would you summarize as simply as possible?)"
+
+**Answer:** You can create a strong reference cycle on a closure by just holding a reference to self inside the closure and then assigning the closure to an instance variable.
+
+
 
 ## License
 
